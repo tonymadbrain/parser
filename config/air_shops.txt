@@ -1,0 +1,13 @@
+just|span|itemprop|price|http://www.just.ru/apple_macbooks/284745_noytbyk_13_3_apple_macbook_air_mid_2014_md760ru_b_serebristii/
+svyaznoy|span|itemprop|price|http://www.svyaznoy.ru/catalog/notebook/1738/1958159/?utm_medium=cpc&utm_content=1958159&utm_campaign=pricelist&utm_source=yandexmarket&utm_term=not_Apple_MacBookAir13Early
+ulmart|span|itemprop|price|http://www.ulmart.ru/goods/800337
+oldi|span|itemprop|price|http://www.oldi.ru/catalog/element/0258590/
+uphouse|span|itemprop|price|http://www.up-house.ru/macbook/air/md760_2014
+dns|span|class|item_value|http://www.dns-shop.ru/catalog/i192047/133-noutbuk-apple-macbook-air-md760ru-b-serebristyj.html
+pleer|div|class|price_noimagefix no_n|http://www.pleer.ru/_79217_apple_macbook_air_13_mid_2012.html
+technopark|i|style|font-style: normal|http://www.technopark.ru/noutbuk-apple-macbook-air-13-mid-2013-md760/?utm_source=yandex_market&utm_medium=cpc&utm_content=998&utm_campaign=4&utm_term=48283
+mvideo|strong|class|product-price-current|http://www.mvideo.ru/products/noutbuk-apple-macbook-air-13-mid-2014-md760ru-b-30020049?utm_medium=cpc&utm_content=30020049&utm_campaign=computers&cityId=CityCZ_975&utm_source=yandexmarket&utm_term=comp_note_Apple_MacBookAir13Mid2014&amp;reff=yan_tov_dD20_c20402_g204020201_m685
+mediamarkt|div|itemprop|price|https://www.mediamarkt.ru/item/1270491/apple-macbook-air-13-md760ru-b-noutbuk
+icover|p|itemprop|price|http://www.icover.ru/catalog/product/apple_macbook_air_13_mid_2014_intel_core_i5_1_4_ggts_128ssd_md760ru_b_md760rs_b/
+restore|span|class|product__price__num|http://www.re-store.ru/apple-mac/macbook-air-mid-2014/MD760RU-B/
+notik|span|class|product-price|http://www.notik.ru/goods/33790.htm

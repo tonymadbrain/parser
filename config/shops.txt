@@ -1,0 +1,13 @@
+just|span|itemprop|price|http://www.just.ru/apple_macbooks/322583_noytbyk_13_3_apple_macbook_pro_mgx72ru_a_serebristii/
+svyaznoy|span|itemprop|price|http://www.svyaznoy.ru/catalog/notebook/1738/2088116
+ulmart|span|itemprop|price|http://www.ulmart.ru/goods/915781
+oldi|span|itemprop|price|http://www.oldi.ru/catalog/element/0266373/
+uphouse|span|itemprop|price|http://www.up-house.ru/macbook/pro-retina/MGX72
+dns|span|class|item_value|http://www.dns-shop.ru/catalog/i197400/133-noutbuk-apple-macbook-pro-retina-mgx72ru-a-serebristyj-chernyj
+pleer|div|class|price_noimagefix no_n|http://www.pleer.ru/_150098_apple_macbook_pro_with_retina_display_mgx72rua_intel_core_i5_4288u_26_ghz8192mb128gbno_oddintel_iris_graphics_5100wi_fibluetoothcam1332560x1600mac_os.html
+mvideo|strong|class|product-price-current|http://www.mvideo.ru/products/noutbuk-apple-macbook-pro-with-retina-display-13-3-mgx72ru-a-30020675
+mediamarkt|div|itemprop|price|https://www.mediamarkt.ru/item/1276801/apple-macbook-pro-13-with-retina-display-mgx72ru-a-noutbuk
+icover|p|itemprop|price|http://www.icover.ru/catalog/product/apple_macbook_pro_13_retina_mgx72ru_noutbuk/
+restore|span|class|product__price__num|http://www.re-store.ru/apple-mac/macbook-pro-13-retina-middle-2014/MGX72RU-A/
+notik|span|class|product-price|http://www.notik.ru/goods/35160.htm
+123|div|itemprop|price|http://www.123.ru/macbook-pro/apple_ma_book_pro_z0_000_2_art8655486/
