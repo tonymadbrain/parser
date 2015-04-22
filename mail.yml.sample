@@ -1,7 +1,0 @@
-:address: "smtp.gmail.com"
-:port: 587
-:domain: "domain.com"
-:user_name: "parser@domain.com"
-:password: "passwrod"
-:authentication: "plain"
-:enable_starttls_auto: true
