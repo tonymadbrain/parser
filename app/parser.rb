@@ -8,7 +8,13 @@ require 'date'
 require 'time'
 require 'yaml'
 require 'mail'
+require 'mysql'
 
+# db connection
+host     = "localhost"
+user     = "parser_user"
+password = "parser"
+database = "parser"
 
 # Time
 date_and_time = "%Y-%b-%d %H:%M:%S"
@@ -17,11 +23,11 @@ time          = Time.now.strftime(date_and_time)
 # Some variables
 prices = {}
 html_mail = "<table>"
-filename = "./public/index.html"
+filename = "../public/index.html"
 html_file = "<html><head><meta charset='utf-8'><title>Парсер цен на MacBook</title><meta name='viewport' content='width=device-width, initial-scale=1.0'><meta name='description' content=''><meta name='author' content=''><link href='css/bootstrap.min.css' rel='stylesheet'><script type='text/javascript' src='js/jquery.min.js'></script><script type='text/javascript' src='js/bootstrap.min.js'></script></head><body><div class='navbar navbar-default navbar-static-top'><div class='container container-fluid'><div class='navbar-header'><a type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'></a><span class='sr-only'>Навигация</span><span class='icon-bar'></span><span class='icon-bar'></span><span class='icon-bar'></span><a class='navbar-brand' href='#'>Парсер цен на MacBook</a></div></div></div><div class='container'><div class='row'><div class='col-md-3'><div class='well'><p>Последний запуск парсера: #{time}</p></div></div><div class='col-md-9'><table class='table table-condensed'><thead><tr><th>Цена</th><th>Ссылка</th></tr></thead><tbody>"
 
 #return unless File.exists?("shops.txt") 
-File.readlines("./config/shops.txt").each do |s|
+File.readlines("../config/shops.txt").each do |s|
   begin
 	s = s.chomp.split("|")
 	uri  = URI.parse(URI.encode(s[4].strip))
@@ -45,33 +51,51 @@ end
 html_mail += "</table>"
 html_file += "</tbody></table></div></div></div></body></html>"
 
+# Save data into db
+sd_prices.each do |url, price|
+  baseurl = URI.join(url, "/").to_s
+  # price url baseurl
+  mysql = Mysql.new(host, user, password, database)
+  select = mysql.query("SELECT name FROM #{database}.cheks WHERE name='#{baseurl}';")
+  select_num_rows = select.num_rows
+  # select.fetch_row.join("\s")
+  if select_num_rows == 1
+    mysql.query("UPDATE #{database}.cheks SET price = '#{price}', url =  '#{url}' WHERE name='#{baseurl}';")
+    puts "UPDATE"
+  else
+    mysql.query("INSERT INTO #{database}.cheks (name, price, url) VALUES('#{baseurl}', '#{price}', '#{url}');")
+    puts "INSERT"
+  end
+  mysql.close if mysql
+end
+
 # Prepare html for file
 File.delete(filename) if File.exists?(filename)
 File.open(filename, "w") do |f|
   f.puts html_file
 end
 
-begin
-  options = YAML.load_file('./config/mail.yml')
-rescue
-  puts "Error when trying read config file for mail. Check that config/mail.yml exists."
-end
+# begin
+#   options = YAML.load_file('../config/mail.yml')
+# rescue
+#   puts "Error when trying read config file for mail. Check that config/mail.yml exists."
+# end
 
-begin
-  Mail.defaults do
-    delivery_method :smtp, options
-  end
+# begin
+#   Mail.defaults do
+#     delivery_method :smtp, options
+#   end
 
-  #Sending
-  Mail.deliver do
-    from     "admin@doam.ru"
-    to       "mail@doam.ru"
-    subject  "Парсер цен на Macbook ".force_encoding("UTF-8")
-    html_part do
-      content_type "text/html; charset=UTF-8"
-      body     "#{html_mail}"
-    end
-  end
-rescue
-  puts "Error with mail send"
-end
+#   #Sending
+#   Mail.deliver do
+#     from     "admin@doam.ru"
+#     to       "mail@doam.ru"
+#     subject  "Парсер цен на Macbook ".force_encoding("UTF-8")
+#     html_part do
+#       content_type "text/html; charset=UTF-8"
+#       body     "#{html_mail}"
+#     end
+#   end
+# rescue
+#   puts "Error with mail send"
+# end
