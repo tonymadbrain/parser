@@ -8,3 +8,8 @@ this script parse prices for macbook :)
 * Classes?
 * Parameters for running
 * Instruction for using
+
+## In progress
+* Databse usage
+  * mysql through mysql gem
+
